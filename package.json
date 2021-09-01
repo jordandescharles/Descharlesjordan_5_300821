@@ -1,0 +1,23 @@
+{
+  "dependencies": {
+    "sass": "^1.38.2"
+  },
+  "name": "descharlesjordan_5_300821",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "sass": "sass --watch ./sass/main.scss:./public/css/style.css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jordandescharles/Descharlesjordan_5_300821.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jordandescharles/Descharlesjordan_5_300821/issues"
+  },
+  "homepage": "https://github.com/jordandescharles/Descharlesjordan_5_300821#readme",
+  "devDependencies": {},
+  "description": ""
+}
