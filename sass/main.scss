@@ -65,8 +65,9 @@ h1 {
   line-height: 47px;
   color: $vermillon;
 }
-
+/*
 main {
+  min-width: 600px;
   max-width: 1440px;
   padding: 0 20px;
   margin-top: 50px;
@@ -75,7 +76,7 @@ main {
   grid-template-rows: repeat(3, 1fr) 0.5fr repeat(6, 1fr);
   grid-column-gap: 0px;
   grid-row-gap: 0px;
-}
+}*/
 article {
   a {
     text-decoration: none;
