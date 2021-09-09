@@ -13,7 +13,13 @@ document.getElementById("main").innerHTML = `
     ${data.photographers.map(photographe).join('')} ` 
 
 });
+
+var tagSelect ="";
+
+
+
 function photographe(card){
+    if(card.tags.includes(tagSelect)){
     return  `
      <article class="carte" id="${card.id}">
       <a href="#" alt="${card.name}">
@@ -29,6 +35,24 @@ function photographe(card){
      </article>
      `  
  }
+     else{
+        return  `
+         <article class="carte" id="${card.id}">
+          <a href="#" alt="${card.name}">
+                 <img src="img/Photographers_ID_Photos/${card.portrait}">
+                 <h2 id="name">${card.name}</h2>
+             </a>
+             <p>
+                 <span id="ville">${card.city}, ${card.country} </span>
+                 <span id="bio">${card.tagline}</span>
+                 <span id="prix">${card.price}€/jour</span> 
+             </p>
+             <ul class="listeTag">${hashtags(card.tags)}</ul>   
+         </article>
+         `  
+     }
+ 
+}
 function hashtags(tag){
     return `${tag.map(listeTag).join('')}`
         }
@@ -38,4 +62,3 @@ function listeTag(tag){
         <li class="hashtag"><span>#</span>${tag}</li>
     `
 }
-
