@@ -70,18 +70,20 @@ h1 {
   color: #901C1C;
 }
 
-/*
+.carte {
+  width: 450px;
+  margin-bottom: 50px;
+}
+
 main {
-  min-width: 600px;
   max-width: 1440px;
   padding: 0 20px;
   margin-top: 50px;
-  display: grid;
-  grid-template-columns: repeat(8, 1fr);
-  grid-template-rows: repeat(3, 1fr) 0.5fr repeat(6, 1fr);
-  grid-column-gap: 0px;
-  grid-row-gap: 0px;
-}*/
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
 article a {
   text-decoration: none;
 }
