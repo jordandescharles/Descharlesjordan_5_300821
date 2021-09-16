@@ -1,0 +1,30 @@
+#gallery{
+  width: 1200px;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin: 50px  auto 0px auto;
+ }
+.imgGallery{
+  margin: 0px ;
+  h2{
+    font-size: 20px;
+    display: inline-block;
+    margin: 0;
+    color:$vermillon;
+  }
+  div{
+    display: flex;
+    justify-content: space-between;
+    line-height: 50px;
+  }
+  #like{
+    color: $vermillon;
+  }
+}
+.galleryImg{
+  border-radius: 0px;
+  width: 350px;
+  height: 350px
+  }
+  

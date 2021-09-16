@@ -1,0 +1,75 @@
+
+.carte_id {
+    width: 1440px;
+    margin: 0 120px;
+     display: flex;
+     justify-content: space-between;
+     a {
+       text-decoration: none;
+     }
+     img {
+       margin: 0;
+       margin-right: 20px;
+       width: 200px;
+       height: 200px;
+       object-fit: cover;
+       border-radius: 100px;
+       box-shadow: -2px 10px 15px 3px rgba(0, 0, 0, 0.27);
+       
+     }
+     h2 {
+       margin-top: 0;
+       font-size: 70px;
+       font-weight: 400;
+       color: $saumon;
+      text-align: left;
+      display: inline;
+     }
+     p {
+       text-align: left;
+       font-weight: 400;
+       margin-top: 10px;
+       margin-bottom: 10px;
+       display: block;
+       flex-direction: column;
+       line-height: 17px;
+     }
+     #ville {
+       display: block;
+       color: $vermillon;
+       font-size: 16px;
+       margin-bottom: 15px;
+     }
+     #bio {
+       font-size: 14px;
+     }
+   
+     .listeTag {
+       justify-content: left;
+       margin-top: 10px;
+     }
+     .hashtag {
+       margin: 0 3px;
+     }
+     #btnContact{
+       display: inline-block;
+       height: 60px;
+       font-size: 20px;
+       background-color: $vermillon;
+       color: white;
+       border: none;
+       border-radius: 6px;
+       margin-top: 14px;
+       margin-left: 30px;
+       padding: 0 10px;
+       vertical-align:top;
+     }
+   }
+   #logo_id{
+     margin-top: 20px;
+   }
+   
+   .imgGallery{
+    margin-bottom: 10px;
+   }
+   

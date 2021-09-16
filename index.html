@@ -6,32 +6,33 @@
     <title>Fisheye</title>
     <meta name="description" content="Fisheye . Site web de photographes freelances">
     <link rel="stylesheet" type="text/css" href="public/css/style.css">
-    <script type="text/javascript" src="script.js"></script>
+   
    
 
 </head>
  
 <body>
-    <button id="skipToContent">Passer au contenu</button>
+    <button id="skipToContent"><a href="#main">Passer au contenu</a></button>
     <header>
-        <img id="logo" src="img/logo.png" href="index.html" alt="Fisheye Home page">
+        <a href="#" id="logo"><img id="logo" src="img/logo.png" href="index.html" alt="Fisheye Home page"></a>
         <nav aria-label=”photographer categories”>
             <ul class="listeTag">
-                <li class="hashtag" > <a href="#" id="portrait"> <span>#</span>Portrait</a></li>
-                <li class="hashtag" id="art"><span>#</span>Art</li>
-                <li class="hashtag"><span>#</span>Fashion</li>
-                <li class="hashtag"><span>#</span>Architecture</li>
-                <li class="hashtag"><span>#</span>Travel</li>
-                <li class="hashtag"><span>#</span>Sport</li>
-                <li class="hashtag"><span>#</span>Animals</li>
-                <li class="hashtag"><span>#</span>Events</li>
+                <li class="hashtag" onclick="filterPhotograph('portrait')"><a href="#" ><span>#</span>Portrait</a></li>
+                <li class="hashtag" onclick="filterPhotograph('art')"><a href="#"><span>#</span>Art</a></li>
+                <li class="hashtag" onclick="filterPhotograph('fashion')"><a href="#" id="fashion"><span>#</span>Fashion</a></li>
+                <li class="hashtag" onclick="filterPhotograph('architecture')"><a href="#" id="architecture"><span>#</span>Architecture</a></li>
+                <li class="hashtag" onclick="filterPhotograph('travel')"><a href="#" id="travel"><span>#</span>Travel</a></li>
+                <li class="hashtag" onclick="filterPhotograph('sport')"><a href="#" id="sport"><span>#</span>Sport</a></li>
+                <li class="hashtag" onclick="filterPhotograph('animals')"><a href="#" id="animals"><span>#</span>Animals</a></li>
+                <li class="hashtag" onclick="filterPhotograph('events')"><a href="#" id="events"><span>#</span>Events</a></li>
             </ul>
         </nav>
         <h1>Nos Photographes</h1>
     </header>
-    <main id="main">
+    <main id="photographer">
         
     </main>
 </body>
-
+ <script type="text/javascript" src="script.js"></script>
+ 
 </html>

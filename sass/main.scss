@@ -1,5 +1,9 @@
 @import url("https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&display=swap");
 @import "./utils/variables";
+@import "./layout/gallery";
+@import "./layout/photographerPage";
+@import "./layout/modal";
+
 html {
   font-family: "DM Sans";
 }
@@ -32,6 +36,10 @@ header {
   text-align: center;
   padding: 0 2vh;
   border-radius: 2vh;
+  a{
+    color: black;
+    text-decoration: none;
+  }
 }
 
 #skipToContent:focus {
@@ -48,13 +56,18 @@ header {
 }
 .listeTag {
   list-style: none;
-  padding: 0;
   display: flex;
-  justify-content: space-between;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 0;
+  li{
+    margin: 3px 3px;
+  }
 }
-nav {
-  .listeTag {
-    width: 550px;
+li {
+  a{
+    color:$vermillon;
+    text-decoration: none;
   }
 }
 
@@ -69,13 +82,16 @@ h1 {
   width: 450px;
   margin-bottom: 50px;
 }
-main {
+#photographer {
   max-width: 1440px;
   padding: 0 20px;
   margin-top: 50px;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+}
+main{
+  padding-bottom:50px
 }
 
 article {
@@ -127,21 +143,27 @@ article {
     margin: 0 3px;
   }
 }
-#d1 {
-  grid-area: 1 / 1 / 4 / 3;
-}
-#d2 {
-  grid-area: 1 / 4 / 4 / 6;
-}
-#d3 {
-  grid-area: 1 / 7 / 4 / 9;
-}
-#d4 {
-    grid-area: 5 / 1 / 8 / 3;
+
+#frontBlock{
+  display: flex;
+  line-height: 20px;
+  background-color: $saumon ;
+  position:fixed;
+  z-index: 9000;
+  bottom:0px;
+  right:20px;
+  padding: 10px 30px;
+  font-size: 20px;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+
+  p{
+    margin : 0 5px 0 0;
   }
-#d5 {
-    grid-area: 5 / 4 / 8 / 6;
+  i{
+    margin : 0 20px 0 0;
+    line-height: 20px;
+    font-size: 15px;
   }
-#d6 {
-    grid-area: 5 / 7/ 8/ 9;
-  }
+}
+

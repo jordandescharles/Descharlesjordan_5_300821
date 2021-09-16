@@ -1,64 +1,54 @@
-
+let  allPhotographers = [];
 
 fetch('data.json')
-.then((response) => {
-    return response.json();
+    .then((response) => {
+        return response.json();
 })
-
-.then((data) => {
-// affichage des photographes avec Littéraux de gabarits ``
- // .map() permet d'eviter les boucles "tableau[i]" en créant de nouveaux arrays3
- // . join('') permet de retirer les virgules de séparration des éléments des array
-document.getElementById("main").innerHTML = `
-    ${data.photographers.map(photographe).join('')} ` 
-
+    .then((data) => {
+        allPhotographers = data.photographers;
+        displayPhotographers(allPhotographers);
 });
 
-var tagSelect ="";
 
-
-
-function photographe(card){
-    if(card.tags.includes(tagSelect)){
-    return  `
-     <article class="carte" id="${card.id}">
-      <a href="#" alt="${card.name}">
-             <img src="img/Photographers_ID_Photos/${card.portrait}">
-             <h2 id="name">${card.name}</h2>
-         </a>
-         <p>
-             <span id="ville">${card.city}, ${card.country} </span>
-             <span id="bio">${card.tagline}</span>
-             <span id="prix">${card.price}€/jour</span> 
-         </p>
-         <ul class="listeTag">${hashtags(card.tags)}</ul>   
-     </article>
-     `  
- }
-     else{
-        return  `
-         <article class="carte" id="${card.id}">
-          <a href="#" alt="${card.name}">
-                 <img src="img/Photographers_ID_Photos/${card.portrait}">
-                 <h2 id="name">${card.name}</h2>
-             </a>
-             <p>
-                 <span id="ville">${card.city}, ${card.country} </span>
-                 <span id="bio">${card.tagline}</span>
-                 <span id="prix">${card.price}€/jour</span> 
-             </p>
-             <ul class="listeTag">${hashtags(card.tags)}</ul>   
-         </article>
-         `  
-     }
- 
+function filterPhotograph(tag){
+    //retourne un tableau 'filtré'
+    let photographersFiltered = allPhotographers.filter(function(photographer){
+        return photographer.tags.includes(tag);
+    });
+    displayPhotographers(photographersFiltered);  
 }
+
+// innerHtml ecrase les "anciennes données"
+// . join('') permet de retirer les virgules de séparration des éléments des array  
+// .map() permet d'eviter les boucles "tableau[i]" en créant un nouvel array
+
+    function displayPhotographers(photographers){
+        document.getElementById("photographer").innerHTML = `${photographers.map(function (photographer){
+            return pageDesign(photographer)
+        }).join('')}`
+    }
+
+// affichage des photographes avec Littéraux de gabarits ``
+function pageDesign(card){ // attention mettre les noms en anglais
+    
+    return `
+<article class="carte" id="${card.id}">
+ <a href="${'photographer.html?id='+card.id+'&name='+card.name}"" alt="${card.name}" id="link">
+        <img src="img/Photographers_ID_Photos/${card.portrait}">
+        <h2 id="name">${card.name}</h2>
+    </a>
+    <p>
+        <span id="ville">${card.city}, ${card.country} </span>
+        <span id="bio">${card.tagline}</span>
+        <span id="prix">${card.price}€/jour</span> 
+    </p>
+    <ul class="listeTag">${hashtags(card.tags)}</ul>   
+</article>
+` }  
+
 function hashtags(tag){
     return `${tag.map(listeTag).join('')}`
-        }
-                 
+} 
 function listeTag(tag){
-    return ` 
-        <li class="hashtag"><span>#</span>${tag}</li>
-    `
+    return ` <li class="hashtag"><span>#</span>${tag}</li>`
 }

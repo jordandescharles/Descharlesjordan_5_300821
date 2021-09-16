@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Fisheye</title>
+    <meta name="description" content="Fisheye . page de ...">
+    <link rel="stylesheet" type="text/css" href="public/css/style.css">
+    <script src="https://kit.fontawesome.com/cff89baa8e.js" crossorigin="anonymous"></script>
+   
+</head>
+ 
+<body>
+    <header>
+        <a href="index.html" id="logo"><img id="logo_id" src="img/logo.png" href="index.html" alt="Fisheye Home page"></a>
+    </header>
+    <main>
+    <div id="photographer">
+       
+    </div> 
+    <div id="gallery">
+        
+    </div>  
+
+    <div class="bground" >
+        <div class="content">
+          <span class="close" id="closeModal"></span>
+          <div class="modal-body">
+              <p>Contactez-moi  <br>
+                <span id="photographerName"></span>
+              </p>
+
+            <form id="myForm" name="reserve" action="index.html" method="get">
+              <div class="formData" >
+                <label>Prénom</label><br>
+                <input class="text-control" type="text" required minlength="2"/>
+                <br>
+                <label>Nom</label><br>
+                <input class="text-control" type="text" required minlength="2"/>
+                <br>
+                <label>E-mail</label><br>
+                <input class="text-control" type="text" required />
+                <br>
+                 <label>Votre message</label><br>
+                <textarea class="text-area"  type="text" rows="5" cols="33"></textarea>
+              </div>
+              <button id="button"> Envoyer</button>
+            </div>
+        </div>
+    </div>
+    <div id="frontBlock">
+        <p id="ttLikes"></p>
+        <i class="fas fa-heart"></i>
+        <p id="price"></p>
+    </div>
+</main>
+</body>
+ <script type="text/javascript" src="scriptPhotographers.js"></script>
+
+</html>
