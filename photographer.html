@@ -18,6 +18,7 @@
     <div id="photographer">
        
     </div> 
+    <button onclick="triParNom()">  TRI PAR NOM</button>
     <div id="gallery">
         
     </div>  
@@ -29,7 +30,6 @@
               <p>Contactez-moi  <br>
                 <span id="photographerName"></span>
               </p>
-
             <form id="myForm" name="reserve" action="index.html" method="get">
               <div class="formData" >
                 <label>Prénom</label><br>
@@ -48,13 +48,24 @@
             </div>
         </div>
     </div>
+
     <div id="frontBlock">
         <p id="ttLikes"></p>
         <i class="fas fa-heart"></i>
         <p id="price"></p>
     </div>
+
+    <div id="lightbox">
+     
+      <div id="mainLight"> 
+        <i class="fas fa-times" id="cross" onclick="closeLightbox()"></i>
+        <br>
+        <div id="imgLight"></div>
+
+      </div>
+    </div>
 </main>
 </body>
- <script type="text/javascript" src="scriptPhotographers.js"></script>
+ <script type="text/javascript" src="photographers.js"></script>
 
 </html>

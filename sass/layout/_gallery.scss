@@ -23,8 +23,17 @@
   }
 }
 .galleryImg{
-  border-radius: 0px;
+  border-radius: 5px;
   width: 350px;
-  height: 350px
+  height: 350px;
+  object-fit: cover; 
   }
-  
+ 
+  article img.galleryImg{
+      box-shadow: none;
+    
+  }
+  .imgGallery span{
+    color: $vermillon;
+  }
+ 

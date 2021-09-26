@@ -26,9 +26,18 @@
 }
 
 .galleryImg {
-  border-radius: 0px;
+  border-radius: 5px;
   width: 350px;
   height: 350px;
+  object-fit: cover;
+}
+
+article img.galleryImg {
+  box-shadow: none;
+}
+
+.imgGallery span {
+  color: #901C1C;
 }
 
 .carte_id {
@@ -232,6 +241,77 @@ textarea {
   color: #fff;
   cursor: pointer;
   border: 0;
+}
+
+#lightbox {
+  display: none;
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: white;
+  z-index: 1;
+}
+
+#mainLight {
+  max-width: 1200px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 20px;
+}
+#mainLight i#cross {
+  width: 1170px;
+  font-size: 60px;
+  display: block;
+  text-align: right;
+  position: absolute;
+  top: 0;
+  color: #901C1C;
+}
+#mainLight #imgLight {
+  height: 700px;
+  width: 800px;
+  background-color: yellow;
+}
+#mainLight #imgLight i#leftArrow {
+  font-size: 60px;
+  position: absolute;
+  left: 0px;
+  top: 325px;
+  color: #901C1C;
+}
+#mainLight #imgLight i#rightArrow {
+  font-size: 60px;
+  position: relative;
+  left: 950px;
+  top: -375px;
+  color: #901C1C;
+}
+#mainLight #imgLight p {
+  position: absolute;
+  top: 700px;
+  color: #901C1C;
+  font-family: "DM Sans";
+  font-size: 3vh;
+}
+#mainLight #imgLight img {
+  object-fit: cover;
+  height: 700px;
+  width: 800px;
+  margin: 0;
+  margin-left: auto;
+  margin-right: auto;
+}
+#mainLight #imgLight video {
+  height: 700px;
+  width: 800px;
+  object-fit: cover;
 }
 
 html {
