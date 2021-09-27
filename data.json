@@ -9,6 +9,7 @@
       "tagline": "Voir le beau dans le quotidien",
       "price": 400,
       "portrait": "MimiKeel.jpg"
+
     },
     {
       "name": "Ellie-Rose Wilkens",
@@ -70,7 +71,8 @@
       "tags": ["fashion"],
       "likes": 62,
       "date": "2011-12-08",
-      "price": 55
+      "price": 55,
+      "alt":"jeune fille habillée en jaune pose devant une plage "
     },
     {
       "id": 8520927,
@@ -80,7 +82,8 @@
       "tags": ["fashion"],
       "likes": 11,
       "date": "2011-11-06",
-      "price": 55
+      "price": 55,
+      "alt":"jeune fille habillée en vert pose accroupie sur la route"
     },
     {
       "id": 9025895,
@@ -90,7 +93,8 @@
       "tags": ["fashion"],
       "likes": 72,
       "date": "2013-08-12",
-      "price": 55
+      "price": 55,
+      "alt":"jeune fille habillée en couleur bariolée pose devant un carrelage noir et blanc"
     },
     {
       "id": 9275938,
@@ -100,7 +104,8 @@
       "tags": ["events"],
       "likes": 69,
       "date": "2018-02-22",
-      "price": 55
+      "price": 55,
+      "alt":"gazebo de mariage décoré mais vide"
     },
     {
       "id": 2053494,
@@ -110,7 +115,8 @@
       "tags": ["events"],
       "likes": 2,
       "date": "2020-05-25",
-      "price": 55
+      "price": 55,
+      "alt":"personnes en cercle tennant des bougies magiques"
     },
     {
       "id": 7324238,
@@ -120,7 +126,8 @@
       "tags": ["events"],
       "likes": 33,
       "date": "2019-06-12",
-      "price": 55
+      "price": 55,
+      "alt":"table décorrée pour un 18eme anniversaire"
     },
     {
       "id": 8328953,
@@ -130,7 +137,8 @@
       "tags": ["art"],
       "likes": 24,
       "date": "2011-12-08",
-      "price": 100
+      "price": 100,
+      "alt":"video d'eun cheval en bois scultpée"
     },
     {
       "id": 7502053,
@@ -140,7 +148,8 @@
       "tags": ["art"],
       "likes": 88,
       "date": "2007-05-07",
-      "price": 55
+      "price": 55,
+      "alt":"oeuvre d'art représentant un homme couleur bleu et jaune sur fond bleu avec un triangle"
     },
     {
       "id": 8523492,
@@ -150,7 +159,8 @@
       "tags": ["art"],
       "likes": 24,
       "date": "2018-05-05",
-      "price": 55
+      "price": 55,
+      "alt":"couloir de metro taggué avec lumiere violette"
     },
     {
       "id": 75902334,
@@ -160,7 +170,8 @@
       "tags": ["art"],
       "likes": 75,
       "date": "2019-11-25",
-      "price": 55
+      "price": 55,
+      "alt":"dessin de pigeons style keith harring"
     },
 
     {

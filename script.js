@@ -33,8 +33,8 @@ function pageDesign(card){ // attention mettre les noms en anglais
     
     return `
 <article class="carte" id="${card.id}">
- <a href="${'photographer.html?id='+card.id+'&name='+card.name}"" alt="${card.name}">
-        <img src="img/Photographers_ID_Photos/${card.portrait}">
+ <a href="${'photographer.html?id='+card.id+'&name='+card.name}"" alt="lien vers la page de ${card.name}">
+        <img src="img/Photographers_ID_Photos/${card.portrait}" alt=" profil de ${card.name}">
         <h2 class="name">${card.name}</h2>
     </a>
     <p>

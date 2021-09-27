@@ -23,7 +23,7 @@
         <strong>Trier par </strong> 
       </p>
       <ul id="selectFilter">
-          <li>Popularité <i class="fas fa-chevron-down" onclick="selectList()"></i></li>
+          <li>Popularité <i class="fas fa-chevron-down" onclick="selectList()" tabindex="0"></i></li>
         </ul>
     </div>  
     <div id="gallery">  
@@ -38,17 +38,17 @@
               </p>
             <form id="myForm" name="reserve" action="index.html" method="get">
               <div class="formData" >
-                <label>Prénom</label><br>
-                <input class="text-control" type="text" required minlength="2"/>
+                <label for="prenom">Prénom</label><br>
+                <input class="text-control" type="text" id="prenom" required minlength="2"/>
                 <br>
-                <label>Nom</label><br>
-                <input class="text-control" type="text" required minlength="2"/>
+                <label for="nom">Nom</label><br>
+                <input class="text-control" type="text" id="nom" required minlength="2"/>
                 <br>
-                <label>E-mail</label><br>
-                <input class="text-control" type="text" required />
+                <label for="e-mail">E-mail</label><br>
+                <input class="text-control" type="text" id="e-mail" required />
                 <br>
-                 <label>Votre message</label><br>
-                <textarea class="text-area"  rows="5" cols="33"></textarea>
+                 <label for="message">Votre message</label><br>
+                <textarea class="text-area"  rows="5" cols="33" id="message"></textarea>
               </div>
               <button id="button"> Envoyer</button>
             </form>
@@ -65,7 +65,7 @@
     <div id="lightbox">
      
       <div id="mainLight"> 
-        <i class="fas fa-times" id="cross" onclick="closeLightbox()"></i>
+        <i class="fas fa-times" id="cross" onclick="closeLightbox()" tabindex="0"></i>
         <br>
         <div id="imgLight"></div>
 

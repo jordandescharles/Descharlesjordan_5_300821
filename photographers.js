@@ -1,4 +1,3 @@
-
 // recupération de l'URL
 var urlcourante = document.location.href;
 var url = new URL(urlcourante);
@@ -27,8 +26,6 @@ fetch('data.json')
         showImage(mediaFactorised);
         modal();
     });
-
-
 /*
  --- --- --- ---  PHOTOGRAPHE  --- --- --- --- *********************************************************
 */
@@ -40,21 +37,20 @@ function showPhotographer(photographers) {
         }
     }).join('')}`
 }
-
 function pageDesign(card) {
     price = card.price;
     callPrice(price);
     return `
     <article class="carte_id" id="${card.id}">
        <div>
-        <h2 class="name">${card.name}</h2>
+        <h1 class="name">${card.name}</h1>
         <button id="btnContact">Contactez-moi</button>
         <p>   
             <span id="ville">${card.city}, ${card.country} </span>
             <span id="bio">${card.tagline}</span>
         </p>        
             <ul class="listeTag">${hashtags(card.tags)}</ul></div>
-        <img src="img/Photographers_ID_Photos/${card.portrait}">   
+        <img src="img/Photographers_ID_Photos/${card.portrait}" alt="${card.name}">   
     </article>
     `
 }
@@ -73,18 +69,18 @@ function callPrice(price) {
 // fonction factory permet de definir le type de média.
 // on se sépare des infos inutiles ( price, image/vidéo )
 // fonction qui ajoute le type VDO et qui tranforme le "video" en "média"
-function Video(id, photographerId, title, video, likes, date, tag) {
+function Video(id, photographerId, title, video, likes, date, alt) {
     this.id = id, this.photographerId = photographerId,
         this.title = title, this.likes = likes, this.date = date,
-        this.media = video; this.tag = tag;
+        this.media = video;this.alt=alt;
     this.type = "mp4";
     this.likedBefore = 'false';
 }
 // fonction qui ajoute le type Image et qui tranforme le "image" en "média"
-function Image(id, photographerId, title, image, likes, date, tag) {
+function Image(id, photographerId, title, image, likes, date, alt) {
     this.id = id, this.photographerId = photographerId,
         this.title = title, this.likes = likes, this.date = date,
-        this.media = image; this.tag = tag;
+        this.media = image;  this.alt=alt;
     this.type = "jpg";
     this.likedBefore = 'false';
 }
@@ -93,28 +89,25 @@ function Image(id, photographerId, title, image, likes, date, tag) {
     on check si le paramettre video est null ou undefined, pour savoir si c'est c'est une image ou une vidéo
 */
 function MediaFactoryMethod() {
-    this.create = function (id, photographerId, title, image, likes, date, video, tag) {
+    this.create = function (id, photographerId, title, image, likes, date, video,  alt) {
         if (video == null) {
-            return new Image(id, photographerId, title, image, likes, date, tag)
+            return new Image(id, photographerId, title, image, likes, date, alt)
         }
         else {
-            return new Video(id, photographerId, title, video, likes, date, tag)
+            return new Video(id, photographerId, title, video, likes, date, alt)
         }
     }
 }
 function pushMedia(media) {
     for (let i = 0; i < media.length; i++) {
         if (media[i].photographerId == idPhotograph) {
-            mediaFactorised.push(mediaFactoryMethod.create(media[i].id, media[i].photographerId, media[i].title, media[i].image, media[i].likes, media[i].date, media[i].video, media[i].tags[0]))
+            mediaFactorised.push(mediaFactoryMethod.create(media[i].id, media[i].photographerId, media[i].title, media[i].image, media[i].likes, media[i].date, media[i].video, media[i].alt))
         }
     }
 }
-
-
 /*
  --- --- --- ---  GALLERY  --- --- --- --- *********************************************************
 */
-
 function showImage(photos) {
     document.getElementById("gallery").innerHTML = `${photos.map(function (photo) {
         if (photo.photographerId == idPhotograph) {
@@ -124,7 +117,6 @@ function showImage(photos) {
         }
     }).join('')}`
 }
-
 function galleryDesign(card) {
     // on en profite pour callback du total des likes car map incrémente tt seul
     // deux return car deux medias possibles
@@ -135,22 +127,22 @@ function galleryDesign(card) {
     if (card.type == 'jpg' && card.likedBefore == 'false') {
         return `
     <article class="imgGallery">
-       <img class="galleryImg" src="img/${card.photographerId}/${card.media}"  onclick="fullsize(${card.photographerId},'${card.media}',${card.id},'${card.title}','${card.type}')"> 
+       <img class="galleryImg" src="img/${card.photographerId}/${card.media}" alt="${card.alt}" tabindex="0" onclick="fullsize(${card.photographerId},'${card.media}',${card.id},'${card.title}','${card.type}')"> 
         <div> 
         <h2 class="name">${card.title}</h2> 
-        <span id="${card.id}">${card.likes} <i class="fas fa-heart" onclick="incrementLikes(${card.likes},${card.id})"></i></span>
+        <span id="${card.id}">${card.likes} <i class="fas fa-heart"alt="${card.alt}" onclick="incrementLikes(${card.likes},${card.id})" tabindex="0"></i></span>
         </div>
     </article>
     `}
     else if (card.type == 'mp4' && card.likedBefore == 'false') {
         return `
     <article class="imgGallery" >
-    <video class="galleryImg" onclick="fullsize(${card.photographerId},'${card.media}',${card.id},'${card.title}','${card.type}')">
-    <source src="img/${card.photographerId}/${card.media}" type="video/mp4"> 
+    <video title="${card.alt}" class="galleryImg" tabindex="0" onclick="fullsize(${card.photographerId},'${card.media}',${card.id},'${card.title}','${card.type}')">
+    <source src="img/${card.photographerId}/${card.media}" type="video/mp4" alt="${card.alt}"> 
     </video>
         <div> 
         <h2 class="name">${card.title}</h2> 
-        <span id="${card.id}">${card.likes} <i class="fas fa-heart" onclick="incrementLikes(${card.likes},${card.id})"></i></span>
+        <span id="${card.id}">${card.likes} <i class="fas fa-heart" tabindex="0" onclick="incrementLikes(${card.likes},${card.id})"></i></span>
                 </div>
     </article>
     `
@@ -159,7 +151,7 @@ function galleryDesign(card) {
     else if (card.type == 'jpg' && card.likedBefore == 'true') {
         return `
         <article class="imgGallery" >
-        <img class="galleryImg" src="img/${card.photographerId}/${card.media}"  onclick="fullsize(${card.photographerId},'${card.media}',${card.id},'${card.title}','${card.type}')"> 
+        <img class="galleryImg" src="img/${card.photographerId}/${card.media}" alt="${card.alt}" tabindex="0" onclick="fullsize(${card.photographerId},'${card.media}',${card.id},'${card.title}','${card.type}')"> 
         <div> 
             <h2 class="name">${card.title}</h2> 
             <span id="${card.id}">${card.likes} <i class="fas fa-heart"></i></span>
@@ -169,8 +161,8 @@ function galleryDesign(card) {
     else if (card.type == 'mp4' && card.likedBefore == 'true') {
         return `
         <article class="imgGallery" >
-        <video class="galleryImg" onclick="fullsize(${card.photographerId},'${card.media}',${card.id},'${card.title}','${card.type}')">
-        <source src="img/${card.photographerId}/${card.media}" type="video/mp4" > 
+        <video title="${card.alt}" class="galleryImg"  tabindex="0" onclick="fullsize(${card.photographerId},'${card.media}',${card.id},'${card.title}','${card.type}')">
+        <source src="img/${card.photographerId}/${card.media}" type="video/mp4"  > 
         </video>
             <div> 
             <h2 class="name">${card.title}</h2> 
@@ -183,7 +175,6 @@ function galleryDesign(card) {
 function callLikes(ttLikes) {
     document.getElementById("ttLikes").innerHTML = ttLikes;
 }
-
 /*
 --- --- --- ---  MODAL  --- --- --- --- *********************************************************
 */
@@ -196,7 +187,6 @@ function modal() {
     document.getElementById("photographerName").innerHTML = photographerName;
 }
 //close modal
-
 /*
  --- --- --- ---  LIKES  --- --- --- --- *********************************************************
 }*/
@@ -218,15 +208,13 @@ function incrementTtLikes() {
     totalLikes++
     callLikes(totalLikes);
 }
-
-
 /*
  --- --- --- ---  TRIS  --- --- --- --- *********************************************************
 }*/
 
 function selectList(){
     document.getElementById("selectFilter").innerHTML =  
-    `<li onclick="popFilter();closeListpop()" >Popularité <i class="fas fa-chevron-up" onclick=""></i></li><hr>
+    `<li onclick="popFilter();closeListpop()" >Popularité <i class="fas fa-chevron-up" onclick="" ></i></li><hr>
     <li onclick="dateFilter();closeListdate()" >Date</li><hr>
     <li onclick="titleFilter();closeListtitle()">Titre</li>`
 }
@@ -242,7 +230,6 @@ function closeListtitle(){
     document.getElementById("selectFilter").innerHTML =  
     `<li>Titre <i class="fas fa-chevron-down" onclick="selectList()"></i></li>`
 }
-
 // par titre
 function titleFilter(){
     mediaFactorised.sort((a,b)=>a.title.localeCompare(b.title)).filter
@@ -264,12 +251,9 @@ function popFilter(){
      totalLikes = 0;
     showImage (mediaFactorised);  
 }
-
-
 /*
 --- --- --- ---  LIGHTBOX --- --- --- --- *********************************************************
 }*/
-
 function launchLightbox() { document.getElementById("lightbox").style.display = "block"; }
 function closeLightbox() { document.getElementById("lightbox").style.display = "none"; }
 // on récupère l'index de la photo pour les fleches gauche et droite de la lightBox
@@ -277,8 +261,8 @@ function searchPhotoIndex(idPhoto) {
     indexPhoto = mediaFactorised.findIndex(x => x.id === idPhoto);
     return indexPhoto
 }
-
 // permet de naviguer entre les photos vers la droite
+/// mettre un objet a la place ------------------------------------------------------------------------------------------------>
 function rightArrow() {
     indexPhoto++;
     let idPhotographPlus = idPhotograph
@@ -286,7 +270,6 @@ function rightArrow() {
     let idPlus = mediaFactorised[indexPhoto].id;
     let PhotonamePlus = mediaFactorised[indexPhoto].title;
     let typePlus = mediaFactorised[indexPhoto].type;
-
     fullsize(idPhotographPlus, mediaPlus, idPlus, PhotonamePlus, typePlus);
 }
 
@@ -300,10 +283,7 @@ function leftArrow() {
     let typeMinus = mediaFactorised[indexPhoto].type;
     fullsize(idPhotographMinus, mediaMinus, idMinus, Photonameminus, typeMinus);
 }
-
-
 function fullsize(id, media, idPhoto, name, type) {
-
     searchPhotoIndex(idPhoto);
     if (type == "jpg") {
         if (indexPhoto == 0) {
@@ -327,7 +307,6 @@ function fullsize(id, media, idPhoto, name, type) {
             `}
     }
     else {
-
         if (indexPhoto == 0) {
             document.getElementById("imgLight").innerHTML = `
             <video controls height="700">
@@ -354,9 +333,5 @@ function fullsize(id, media, idPhoto, name, type) {
         <i class="fas fa-chevron-right" id="rightArrow" onclick="rightArrow()"></i> 
         `}
     }
-
-
     launchLightbox();
 }
-
-
