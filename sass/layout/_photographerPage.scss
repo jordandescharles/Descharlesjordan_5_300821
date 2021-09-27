@@ -1,7 +1,7 @@
 
 .carte_id {
-    width: 1440px;
-    margin: 0 120px;
+    width: 1280px;
+    margin: 0 20px;
      display: flex;
      justify-content: space-between;
      a {
@@ -72,4 +72,34 @@
    .imgGallery{
     margin-bottom: 10px;
    }
+   .tri{
+    width: 1280px;
+    display: flex;
+    position: absolute;
+    font-size: 20px;
    
+    p{
+      padding-top: 15px;
+    }
+    ul{
+      list-style: none;
+     background-color: $vermillon;
+     color:white;
+     border:none;
+     border-radius: 5px;
+     font-size: 20px;
+     padding: 10px;
+     font-family: "DM Sans";
+     margin-left: 10px;
+   }
+   li{
+     padding:5px
+   }
+   i{
+     margin-left: 20px;
+   }
+   hr{
+     color: white;
+   }
+  
+  }

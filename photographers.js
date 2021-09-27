@@ -144,8 +144,8 @@ function galleryDesign(card) {
     `}
     else if (card.type == 'mp4' && card.likedBefore == 'false') {
         return `
-    <article class="imgGallery" onclick="fullsize(${card.photographerId},'${card.media}',${card.id},'${card.title}','${card.type}')" >
-    <video class="galleryImg">
+    <article class="imgGallery">
+    <video class="galleryImg" onclick="fullsize(${card.photographerId},'${card.media}',${card.id},'${card.title}','${card.type}')">
     <source src="img/${card.photographerId}/${card.media}" type="video/mp4"> 
     </video>
         <div> 
@@ -219,19 +219,50 @@ function incrementTtLikes() {
     callLikes(totalLikes);
 }
 
+
 /*
  --- --- --- ---  TRIS  --- --- --- --- *********************************************************
 }*/
-function triParNom() {
-    mediaFactorised.sort(function (a, b) {
-        if (a.title < b.title) { return -1; }
-        if (a.title > b.title) { return 1; }
-        return 0;
-    })
-    // RAZ des totaux de likes pour eviter de cumuler les likes a chaques tri
-    totalLikes = 0;
-    // on relance l'affichage des images
-    showImage(mediaFactorised);
+
+function selectList(){
+    document.getElementById("selectFilter").innerHTML =  
+    `<li onclick="popFilter();closeListpop()" >Popularité <i class="fas fa-chevron-up" onclick=""></i></li><hr>
+    <li onclick="dateFilter();closeListdate()" >Date</li><hr>
+    <li onclick="titleFilter();closeListtitle()">Titre</li>`
+}
+function closeListpop(){
+    document.getElementById("selectFilter").innerHTML =  
+    `<li>Popularité <i class="fas fa-chevron-down" onclick="selectList()"></i></li>`
+}
+function closeListdate(){
+    document.getElementById("selectFilter").innerHTML =  
+    `<li>Date <i class="fas fa-chevron-down" onclick="selectList()"></i></li>`
+}
+function closeListtitle(){
+    document.getElementById("selectFilter").innerHTML =  
+    `<li>Titre <i class="fas fa-chevron-down" onclick="selectList()"></i></li>`
+}
+
+// par titre
+function titleFilter(){
+    mediaFactorised.sort((a,b)=>a.title.localeCompare(b.title)).filter
+     // RAZ des totaux de likes pour eviter de cumuler les likes a chaques tri
+     totalLikes = 0;
+        showImage (mediaFactorised); 
+}
+// par date
+function dateFilter(){
+    mediaFactorised.sort((b,a)=>a.date.localeCompare(b.date )).filter
+     // RAZ des totaux de likes pour eviter de cumuler les likes a chaques tri
+     totalLikes = 0;
+        showImage (mediaFactorised);  
+}
+// parlikes
+function popFilter(){
+    mediaFactorised.sort(function(a, b){return b.likes-a.likes})
+     // RAZ des totaux de likes pour eviter de cumuler les likes a chaques tri
+     totalLikes = 0;
+    showImage (mediaFactorised);  
 }
 
 
@@ -327,4 +358,5 @@ function fullsize(id, media, idPhoto, name, type) {
 
     launchLightbox();
 }
+
 

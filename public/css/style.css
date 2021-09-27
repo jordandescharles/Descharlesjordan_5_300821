@@ -1,10 +1,10 @@
 @import url("https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&display=swap");
 #gallery {
-  width: 1200px;
+  width: 1280px;
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
-  margin: 50px auto 0px auto;
+  margin: 100px auto 0px auto;
 }
 
 .imgGallery {
@@ -41,8 +41,8 @@ article img.galleryImg {
 }
 
 .carte_id {
-  width: 1440px;
-  margin: 0 120px;
+  width: 1280px;
+  margin: 0 20px;
   display: flex;
   justify-content: space-between;
 }
@@ -111,6 +111,36 @@ article img.galleryImg {
 
 .imgGallery {
   margin-bottom: 10px;
+}
+
+.tri {
+  width: 1280px;
+  display: flex;
+  position: absolute;
+  font-size: 20px;
+}
+.tri p {
+  padding-top: 15px;
+}
+.tri ul {
+  list-style: none;
+  background-color: #901C1C;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 20px;
+  padding: 10px;
+  font-family: "DM Sans";
+  margin-left: 10px;
+}
+.tri li {
+  padding: 5px;
+}
+.tri i {
+  margin-left: 20px;
+}
+.tri hr {
+  color: white;
 }
 
 /* Modal form */
@@ -319,13 +349,12 @@ html {
 }
 
 body {
-  max-width: 1440px;
+  max-width: 1280px;
   margin: 0 auto;
 }
 
 header {
-  max-width: 1440px;
-  padding: 0 100px;
+  max-width: 1280px;
   height: auto;
   display: flex;
   flex-wrap: wrap;
@@ -395,13 +424,12 @@ h1 {
 }
 
 .carte {
-  width: 450px;
+  width: 400px;
   margin-bottom: 50px;
 }
 
 #photographer {
-  max-width: 1440px;
-  padding: 0 20px;
+  max-width: 1280px;
   margin-top: 50px;
   display: flex;
   flex-wrap: wrap;
