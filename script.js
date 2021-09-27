@@ -33,14 +33,14 @@ function pageDesign(card){ // attention mettre les noms en anglais
     
     return `
 <article class="carte" id="${card.id}">
- <a href="${'photographer.html?id='+card.id+'&name='+card.name}"" alt="${card.name}" id="link">
+ <a href="${'photographer.html?id='+card.id+'&name='+card.name}"" alt="${card.name}">
         <img src="img/Photographers_ID_Photos/${card.portrait}">
-        <h2 id="name">${card.name}</h2>
+        <h2 class="name">${card.name}</h2>
     </a>
     <p>
-        <span id="ville">${card.city}, ${card.country} </span>
-        <span id="bio">${card.tagline}</span>
-        <span id="prix">${card.price}€/jour</span> 
+        <span class="ville">${card.city}, ${card.country} </span>
+        <span class="bio">${card.tagline}</span>
+        <span class="prix">${card.price}€/jour</span> 
     </p>
     <ul class="listeTag">${hashtags(card.tags)}</ul>   
 </article>

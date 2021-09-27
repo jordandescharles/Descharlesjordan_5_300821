@@ -1,4 +1,82 @@
 @import url("https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&display=swap");
+@media (max-width: 580px) {
+  header {
+    margin-left: auto;
+    margin-right: auto;
+    align-items: center;
+  }
+
+  h1#titlemini {
+    display: block;
+    font-size: 15px;
+  }
+
+  #titlemax {
+    display: none;
+  }
+
+  #listeTag {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  article.carte_id img {
+    margin: 0;
+    margin-right: 20px;
+    width: 180px;
+    height: 110px;
+    object-fit: cover;
+    border-radius: 200px;
+    box-shadow: -2px 10px 15px 3px rgba(0, 0, 0, 0.27);
+  }
+
+  h2.name {
+    font-size: 30px;
+    margin-bottom: 0px;
+  }
+
+  #logo_id {
+    margin-top: 20px;
+    margin-left: 20px;
+  }
+
+  .carte_id button#btnContact {
+    display: none;
+  }
+  .carte_id span.ville {
+    margin-top: 0px;
+    margin-bottom: 5px;
+  }
+  .carte_id span.bio {
+    font-size: 12px;
+  }
+
+  article .carte_id p {
+    margin-top: 0;
+  }
+}
+@media (max-width: 1200px) and (min-width: 580px) {
+  header {
+    margin-left: auto;
+    margin-right: auto;
+    align-items: center;
+    flex-direction: column;
+  }
+
+  h1#titlemini {
+    display: block;
+    font-size: 22px;
+  }
+
+  #titlemax {
+    display: none;
+  }
+
+  #listeTag {
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
 #gallery {
   width: 1280px;
   display: flex;
@@ -75,13 +153,13 @@ article img.galleryImg {
   flex-direction: column;
   line-height: 17px;
 }
-.carte_id #ville {
+.carte_id .ville {
   display: block;
   color: #901C1C;
   font-size: 16px;
   margin-bottom: 15px;
 }
-.carte_id #bio {
+.carte_id .bio {
   font-size: 14px;
 }
 .carte_id .listeTag {
@@ -354,12 +432,22 @@ body {
 }
 
 header {
-  max-width: 1280px;
+  max-width: 800px;
   height: auto;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
+}
+
+#titlemini {
+  display: none;
+}
+
+#titlemax {
+  position: absolute;
+  right: 0;
+  top: -105px;
 }
 
 #logo {
@@ -368,6 +456,7 @@ header {
 }
 
 #skipToContent {
+  width: 200px;
   display: block;
   margin: 2vh auto;
   opacity: 0;
@@ -380,12 +469,13 @@ header {
   padding: 0 2vh;
   border-radius: 2vh;
 }
-#skipToContent a {
+
+#linkSkip {
   color: black;
   text-decoration: none;
 }
 
-#skipToContent:focus {
+#linkSkip:focus #skipToContent {
   opacity: 1;
 }
 
@@ -438,6 +528,7 @@ h1 {
 
 main {
   padding-bottom: 50px;
+  position: relative;
 }
 
 article a {
@@ -469,14 +560,14 @@ article p {
   flex-direction: column;
   line-height: 17px;
 }
-article #ville {
+article .ville {
   color: #901C1C;
   font-size: 13px;
 }
-article #bio {
+article .bio {
   font-size: 10px;
 }
-article #prix {
+article .prix {
   color: #c4c4c4;
   font-size: 9px;
 }

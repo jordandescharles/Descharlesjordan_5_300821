@@ -47,7 +47,7 @@ function pageDesign(card) {
     return `
     <article class="carte_id" id="${card.id}">
        <div>
-        <h2 id="name">${card.name}</h2>
+        <h2 class="name">${card.name}</h2>
         <button id="btnContact">Contactez-moi</button>
         <p>   
             <span id="ville">${card.city}, ${card.country} </span>
@@ -137,19 +137,19 @@ function galleryDesign(card) {
     <article class="imgGallery">
        <img class="galleryImg" src="img/${card.photographerId}/${card.media}"  onclick="fullsize(${card.photographerId},'${card.media}',${card.id},'${card.title}','${card.type}')"> 
         <div> 
-        <h2 id="name">${card.title}</h2> 
+        <h2 class="name">${card.title}</h2> 
         <span id="${card.id}">${card.likes} <i class="fas fa-heart" onclick="incrementLikes(${card.likes},${card.id})"></i></span>
         </div>
     </article>
     `}
     else if (card.type == 'mp4' && card.likedBefore == 'false') {
         return `
-    <article class="imgGallery">
+    <article class="imgGallery" >
     <video class="galleryImg" onclick="fullsize(${card.photographerId},'${card.media}',${card.id},'${card.title}','${card.type}')">
     <source src="img/${card.photographerId}/${card.media}" type="video/mp4"> 
     </video>
         <div> 
-        <h2 id="name">${card.title}</h2> 
+        <h2 class="name">${card.title}</h2> 
         <span id="${card.id}">${card.likes} <i class="fas fa-heart" onclick="incrementLikes(${card.likes},${card.id})"></i></span>
                 </div>
     </article>
@@ -161,7 +161,7 @@ function galleryDesign(card) {
         <article class="imgGallery" >
         <img class="galleryImg" src="img/${card.photographerId}/${card.media}"  onclick="fullsize(${card.photographerId},'${card.media}',${card.id},'${card.title}','${card.type}')"> 
         <div> 
-            <h2 id="name">${card.title}</h2> 
+            <h2 class="name">${card.title}</h2> 
             <span id="${card.id}">${card.likes} <i class="fas fa-heart"></i></span>
             </div>
         </article>
@@ -173,7 +173,7 @@ function galleryDesign(card) {
         <source src="img/${card.photographerId}/${card.media}" type="video/mp4" > 
         </video>
             <div> 
-            <h2 id="name">${card.title}</h2> 
+            <h2 class="name">${card.title}</h2> 
             <span id="${card.id}">${card.likes} <i class="fas fa-heart"></i></span>
                     </div>
         </article>
