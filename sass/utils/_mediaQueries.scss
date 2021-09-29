@@ -1,85 +1,198 @@
-@media (max-width: 580px) { 
-    
-header{
+@media  screen and (max-device-width: 790px)  {
+  header {
     margin-left: auto;
     margin-right: auto;
-    align-items: center ;
-}
-h1#titlemini{
-    display:block;
+    align-items: center;
+  }
+  h1#titlemini {
+    display: block;
     font-size: 15px;
-}
-#titlemax{
+  }
+  #titlemax {
     display: none;
-}
-#listeTag{
+  }
+  #listeTag {
     margin-left: auto;
     margin-right: auto;
-}
- 
-article.carte_id {
-     img {
-       margin: 0;
-       margin-right: 20px;
-       width: 180px;
-       height:110px;
-       object-fit: cover;
-       border-radius: 200px;
-       box-shadow: -2px 10px 15px 3px rgba(0, 0, 0, 0.27); 
-     }
-}
-h2.name{
-    font-size: 30px;
+  }
+  article h1.name {
+    font-size: 40px;
+    padding-top: 0;
     margin-bottom: 0px;
-}
-#logo_id{
-    margin-top: 20px;
+  }
+  #logo_id {
     margin-left: 20px;
-}
-.carte_id {
-    button#btnContact{
-    display:none;
+  }
+  main {
+    .carte_id {
+        padding:0 20px 30px 20px;
+        background-color: white;
     }
-    span.ville{
-     margin-top: 0px;
-     margin-bottom: 5px;
+    .listeTag .hashtag{
+        margin-bottom: 5px;
     }
-    span.bio{
-        font-size: 12px;
+   
+    .tri{
+        display: none;
+    } 
+    #gallery{
+        width: auto;
+        margin: 0;
+        padding: 0;
+        padding-bottom: 20px;
+        display: flex;
     }
-    
-}
-article .carte_id p{
-    margin-top:0;
+    .imgGallery{
+        margin: 0 auto;
+        h2.name {
+            font-size: 20px;
+          }
     }
-
-
-
-}
- 
-
-
- ///// tablette
- @media (max-width: 1200px) and (min-width: 580px){ 
-    
-    header{
-        margin-left: auto;
-        margin-right: auto;
-        align-items: center ;
-        flex-direction: column;
-        
+    .galleryImg{
+        height: 200px;
+        object-position:50% 30%;
     }
-    h1#titlemini{
-        display:block;
-        font-size: 22px;
+    #frontBlock{
+        display: none;
+    }
+    #contactMobile{
+        display: inline-block;
+        height: 40px;
+        font-size: 20px;
+        background-color: $vermillon;
+        color: white;
+        border: none;
+        border-radius: 6px;
+        padding: 0 20px;
+        position: fixed;
+        bottom: 20px;
+        left: 50%;
+        transform: translate(-50%, 0);
+        z-index: 2;
       }
-    
-      #titlemax{
-       display: none;
-      }
- 
-      #listeTag{
-          margin-left: auto;
+     
+}
+   #photographer button#btnContact {
+      display: none;
+    }   
+    span.ville {
+      margin-top: 0px;
+      margin-bottom: 5px;
+    }
+    span.bio {
+      font-size: 12px;
+    }
+  
+  article .carte_id p {
+    margin-top: 0;
+  }
+  article .imgPhotographe img{
+    width: 130px;
+    height: 130px;
+  }
+  #myForm button#button{
+      margin-top: 20px;
+      margin-left: 50%;
+      transform: translate(-50%, 0);
+  }
+  .content div.modal-body{
+    p{
+        font-size: 30px;
+    }
+    label{
+        font-size: 20px;
+    }
+  }
+  
+div#Light {
+    width: 300px;
+      #imgLight{
+        width: 300px;
+        display: flex;
+        i#leftArrow{
+          width: 40px;
+          font-size: 30px;
+          color: $vermillon;
+        }
+        i#leftArrowWhite , i#rightArrowWhite{
+         width: 40px;
+         color: white;
+         font-size: 30px;
+        }
+        i#rightArrow{
+         width: 40px;
+         text-align: right;
+         font-size: 30px;
+         color: $vermillon;
+        }
+        p{
+         width: 300px;
+         margin: 0 auto;
+         color: $vermillon;
+         font-family: "DM Sans";
+         font-size: 3vh;
+        }
+        img{
+          object-fit: cover;
+          height: 200px;
+          width: 200px;
+          margin: 0;
+          margin-left:auto;
           margin-right: auto;
-      }
- }
+        }
+        video{
+          height: 200px;
+          width:200px;
+          object-fit: cover;
+          margin-left:auto;
+          margin-right: auto;
+        }
+    }
+  }
+  #lightbox #mainLight{ 
+    margin-top: 50%;
+    i#cross{
+    width: 50px;
+    font-size: 30px;
+    display: block;
+    margin-left: 310px;
+    color: $vermillon;
+    transform: translateY(25px);
+  }
+  p{
+    width: 200px;
+    margin: 10px auto;
+    color: $vermillon;
+    font-family: "DM Sans";
+    font-size: 2vh;
+   }
+}
+
+}
+
+
+///// tablette
+@media (max-width: 1200px) and (min-width: 791px) {
+  header {
+    margin-left: auto;
+    margin-right: auto;
+    align-items: center;
+    flex-direction: column;
+  }
+  h1#titlemini {
+    display: block;
+    font-size: 22px;
+  }
+
+  #titlemax {
+    display: none;
+  }
+
+  #listeTag {
+    margin-left: auto;
+    margin-right: auto;
+  }
+  main #gallery{
+      justify-content: space-around;
+  }
+}

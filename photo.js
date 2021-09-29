@@ -12,7 +12,9 @@ let price = 0;
 let arrayPhotos = [];
 let indexPhoto = 0;
 let mediaFactoryMethod = new MediaFactoryMethod();
-let mediaFactorised = []
+let mediaFactorised = [];
+let keys=false;
+
 
 fetch('data.json')
     .then((response) => {
@@ -46,11 +48,13 @@ function pageDesign(card) {
         <h1 class="name">${card.name}</h1>
         <button id="btnContact">Contactez-moi</button>
         <p>   
-            <span id="ville">${card.city}, ${card.country} </span>
-            <span id="bio">${card.tagline}</span>
+            <span class="ville">${card.city}, ${card.country} </span>
+            <span class="bio">${card.tagline}</span>
         </p>        
-            <ul class="listeTag">${hashtags(card.tags)}</ul></div>
-        <img src="img/Photographers_ID_Photos/${card.portrait}" alt="${card.name}">   
+        <ul class="listeTag">${hashtags(card.tags)}</ul></div>
+        <div class="imgPhotographe">   
+            <img src="img/Photographers_ID_Photos/${card.portrait}" alt="${card.name}">  
+        </div>  
     </article>
     `
 }
@@ -183,6 +187,7 @@ function closeModal() { modalbg.style.display = "none"; }
 // launch modal event
 function modal() {
     document.getElementById("btnContact").addEventListener("click", launchModal);
+    document.getElementById("contactMobile").addEventListener("click", launchModal);
     document.getElementById("closeModal").addEventListener("click", closeModal);
     document.getElementById("photographerName").innerHTML = photographerName;
 }
@@ -254,8 +259,8 @@ function popFilter(){
 /*
 --- --- --- ---  LIGHTBOX --- --- --- --- *********************************************************
 }*/
-function launchLightbox() { document.getElementById("lightbox").style.display = "block"; }
-function closeLightbox() { document.getElementById("lightbox").style.display = "none"; }
+function launchLightbox() { document.getElementById("lightbox").style.display = "block";keys=true;}
+function closeLightbox() { document.getElementById("lightbox").style.display = "none"; keys=false;}
 // on récupère l'index de la photo pour les fleches gauche et droite de la lightBox
 function searchPhotoIndex(idPhoto) {
     indexPhoto = mediaFactorised.findIndex(x => x.id === idPhoto);
@@ -285,53 +290,97 @@ function leftArrow() {
 }
 function fullsize(id, media, idPhoto, name, type) {
     searchPhotoIndex(idPhoto);
+
     if (type == "jpg") {
         if (indexPhoto == 0) {
-            document.getElementById("imgLight").innerHTML = `
+            document.getElementById("Light").innerHTML = `
+            <div id="imgLight">
+            <i class="fas fa-chevron-left" id="leftArrowWhite"></i> 
             <img src="img/${id}/${media}"> 
-            <p>${name}<p>
             <i class="fas fa-chevron-right" id="rightArrow" onclick="rightArrow()"></i> 
+           </div>
+            <p>${name}<p>
             `  }
         else if (indexPhoto == mediaFactorised.length - 1) {
-            document.getElementById("imgLight").innerHTML = `
+            document.getElementById("Light").innerHTML = `
+            <div id="imgLight">
             <i class="fas fa-chevron-left" id="leftArrow" onclick="leftArrow()"></i> 
              <img src="img/${id}/${media}"> 
+             <i class="fas fa-chevron-left" id="rightArrowWhite"></i> 
+             </div>
              <p>${name}<p>
             `}
         else {
-            document.getElementById("imgLight").innerHTML = `
+            document.getElementById("Light").innerHTML = `
+            <div id="imgLight">
             <i class="fas fa-chevron-left" id="leftArrow" onclick="leftArrow()"></i> 
             <img src="img/${id}/${media}">
-            <p>${name}<p>
             <i class="fas fa-chevron-right" id="rightArrow" onclick="rightArrow()"></i> 
+            </div>
+            <p>${name}<p>
             `}
     }
     else {
         if (indexPhoto == 0) {
-            document.getElementById("imgLight").innerHTML = `
+            document.getElementById("Light").innerHTML = `
+            <div id="imgLight">
+            <i class="fas fa-chevron-left" id="leftArrowWhite"></i> 
             <video controls height="700">
             <source src="img/${id}/${media}" type="video/mp4"> 
             </video>
-            <p>${name}<p>
-            <i class="fas fa-chevron-right" id="rightArrow" onclick="rightArrow()"></i> 
+            <i class="fas fa-chevron-right" id="rightArrow" onclick="rightArrow()"></i>
+            </div>
+            <p>${name}<p> 
             `  }
         else if (indexPhoto == mediaFactorised.length - 1) {
-            document.getElementById("imgLight").innerHTML = `
+            document.getElementById("Light").innerHTML = `
+            <div id="imgLight">
         <i class="fas fa-chevron-left" id="leftArrow" onclick="leftArrow()"></i> 
         <video controls >
         <source src="img/${id}/${media}" type="video/mp4"> 
         </video>
+        <i class="fas fa-chevron-left" id="rightArrowWhite"></i> 
+
+        </div>
         <p>${name}<p>
         `}
         else {
-            document.getElementById("imgLight").innerHTML = `
+            document.getElementById("Light").innerHTML = `
+            <div id="imgLight">
         <i class="fas fa-chevron-left" id="leftArrow" onclick="leftArrow()"></i> 
         <video controls >
         <source src="img/${id}/${media}" type="video/mp4"> 
         </video> 
-        <p>${name}<p>
-        <i class="fas fa-chevron-right" id="rightArrow" onclick="rightArrow()"></i> 
+        <i class="fas fa-chevron-right" id="rightArrow" onclick="rightArrow()"></i>
+        </div>
+        <p>${name}<p> 
         `}
     }
     launchLightbox();
+    keyTriggers();
+    }
+
+/* 
+KEYS LIGHTBOX
+la variable keys sert a bloquer la navigation fléché hors de la lightbox
+*/  
+function keyTriggers(){
+    document.onkeydown = function (e) {
+        switch (e.key) {
+            case 'Escape':
+                closeLightbox();
+                break;
+            case 'ArrowLeft':
+                if (indexPhoto != 0 && keys==true) {
+                leftArrow()
+            }
+                break;
+            case 'ArrowRight':
+                if (indexPhoto != mediaFactorised.length - 1 && keys==true) {
+                    rightArrow()
+                }
+                break;
+            } 
+        }
 }
+

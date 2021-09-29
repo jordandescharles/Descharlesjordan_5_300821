@@ -1,5 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&display=swap");
-@media (max-width: 580px) {
+@media screen and (max-device-width: 790px) {
   header {
     margin-left: auto;
     margin-right: auto;
@@ -20,42 +20,163 @@
     margin-right: auto;
   }
 
-  article.carte_id img {
-    margin: 0;
-    margin-right: 20px;
-    width: 180px;
-    height: 110px;
-    object-fit: cover;
-    border-radius: 200px;
-    box-shadow: -2px 10px 15px 3px rgba(0, 0, 0, 0.27);
-  }
-
-  h2.name {
-    font-size: 30px;
+  article h1.name {
+    font-size: 40px;
+    padding-top: 0;
     margin-bottom: 0px;
   }
 
   #logo_id {
-    margin-top: 20px;
     margin-left: 20px;
   }
 
-  .carte_id button#btnContact {
+  main .carte_id {
+    padding: 0 20px 30px 20px;
+    background-color: white;
+  }
+  main .listeTag .hashtag {
+    margin-bottom: 5px;
+  }
+  main .tri {
     display: none;
   }
-  .carte_id span.ville {
+  main #gallery {
+    width: auto;
+    margin: 0;
+    padding: 0;
+    padding-bottom: 20px;
+    display: flex;
+  }
+  main .imgGallery {
+    margin: 0 auto;
+  }
+  main .imgGallery h2.name {
+    font-size: 20px;
+  }
+  main .galleryImg {
+    height: 200px;
+    object-position: 50% 30%;
+  }
+  main #frontBlock {
+    display: none;
+  }
+  main #contactMobile {
+    display: inline-block;
+    height: 40px;
+    font-size: 20px;
+    background-color: #901C1C;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    padding: 0 20px;
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translate(-50%, 0);
+    z-index: 2;
+  }
+
+  #photographer button#btnContact {
+    display: none;
+  }
+
+  span.ville {
     margin-top: 0px;
     margin-bottom: 5px;
   }
-  .carte_id span.bio {
+
+  span.bio {
     font-size: 12px;
   }
 
   article .carte_id p {
     margin-top: 0;
   }
+
+  article .imgPhotographe img {
+    width: 130px;
+    height: 130px;
+  }
+
+  #myForm button#button {
+    margin-top: 20px;
+    margin-left: 50%;
+    transform: translate(-50%, 0);
+  }
+
+  .content div.modal-body p {
+    font-size: 30px;
+  }
+  .content div.modal-body label {
+    font-size: 20px;
+  }
+
+  div#Light {
+    width: 300px;
+  }
+  div#Light #imgLight {
+    width: 300px;
+    display: flex;
+  }
+  div#Light #imgLight i#leftArrow {
+    width: 40px;
+    font-size: 30px;
+    color: #901C1C;
+  }
+  div#Light #imgLight i#leftArrowWhite, div#Light #imgLight i#rightArrowWhite {
+    width: 40px;
+    color: white;
+    font-size: 30px;
+  }
+  div#Light #imgLight i#rightArrow {
+    width: 40px;
+    text-align: right;
+    font-size: 30px;
+    color: #901C1C;
+  }
+  div#Light #imgLight p {
+    width: 300px;
+    margin: 0 auto;
+    color: #901C1C;
+    font-family: "DM Sans";
+    font-size: 3vh;
+  }
+  div#Light #imgLight img {
+    object-fit: cover;
+    height: 200px;
+    width: 200px;
+    margin: 0;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  div#Light #imgLight video {
+    height: 200px;
+    width: 200px;
+    object-fit: cover;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  #lightbox #mainLight {
+    margin-top: 50%;
+  }
+  #lightbox #mainLight i#cross {
+    width: 50px;
+    font-size: 30px;
+    display: block;
+    margin-left: 310px;
+    color: #901C1C;
+    transform: translateY(25px);
+  }
+  #lightbox #mainLight p {
+    width: 200px;
+    margin: 10px auto;
+    color: #901C1C;
+    font-family: "DM Sans";
+    font-size: 2vh;
+  }
 }
-@media (max-width: 1200px) and (min-width: 580px) {
+@media (max-width: 1200px) and (min-width: 791px) {
   header {
     margin-left: auto;
     margin-right: auto;
@@ -76,9 +197,13 @@
     margin-left: auto;
     margin-right: auto;
   }
+
+  main #gallery {
+    justify-content: space-around;
+  }
 }
 #gallery {
-  width: 1280px;
+  width: auto;
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
@@ -86,7 +211,7 @@
 }
 
 .imgGallery {
-  margin: 0px;
+  margin: 0px 15px;
 }
 .imgGallery h2 {
   font-size: 20px;
@@ -118,31 +243,38 @@ article img.galleryImg {
   color: #901C1C;
 }
 
-.carte_id {
-  width: 1280px;
-  margin: 0 20px;
-  display: flex;
-  justify-content: space-between;
+#logoMargin {
+  margin-top: 27px;
 }
-.carte_id a {
-  text-decoration: none;
-}
-.carte_id img {
-  margin: 0;
-  margin-right: 20px;
+
+.imgPhotographe img {
+  display: block;
+  margin: 0% auto;
   width: 200px;
   height: 200px;
   object-fit: cover;
   border-radius: 100px;
   box-shadow: -2px 10px 15px 3px rgba(0, 0, 0, 0.27);
 }
+
+.carte_id {
+  width: 1280px;
+  padding: 30px;
+  border-radius: 5px;
+  background-color: #FAFAFA;
+  display: flex;
+  justify-content: space-between;
+}
+.carte_id a {
+  text-decoration: none;
+}
 .carte_id h1 {
-  margin-top: 0;
+  padding-top: 20px;
   font-size: 70px;
   font-weight: 400;
   color: #D3573C;
   text-align: left;
-  display: inline;
+  display: inline-block;
 }
 .carte_id p {
   text-align: left;
@@ -238,7 +370,7 @@ article img.galleryImg {
 .bground {
   display: none;
   position: fixed;
-  z-index: 1;
+  z-index: 5;
   left: 0;
   top: 0;
   height: 100%;
@@ -253,7 +385,7 @@ article img.galleryImg {
   max-width: 500px;
   animation-name: modalopen;
   animation-duration: var(--modal-duration);
-  background: #D3573C;
+  background: #DB8876;
   border-radius: 10px;
   overflow: hidden;
   position: relative;
@@ -359,13 +491,14 @@ textarea {
   width: 100%;
   height: 100%;
   background-color: white;
-  z-index: 1;
+  z-index: 5;
 }
 
 #mainLight {
-  max-width: 1200px;
+  max-width: auto;
   position: relative;
   display: flex;
+  flex-wrap: nowrap;
   justify-content: center;
   flex-direction: column;
   align-items: center;
@@ -374,52 +507,59 @@ textarea {
   margin-top: 20px;
 }
 #mainLight i#cross {
-  width: 1170px;
+  width: 50px;
   font-size: 60px;
   display: block;
-  text-align: right;
-  position: absolute;
-  top: 0;
+  margin-left: 770px;
   color: #901C1C;
+  transform: translateY(50px);
 }
-#mainLight #imgLight {
-  height: 700px;
-  width: 800px;
-  background-color: yellow;
-}
-#mainLight #imgLight i#leftArrow {
-  font-size: 60px;
-  position: absolute;
-  left: 0px;
-  top: 325px;
-  color: #901C1C;
-}
-#mainLight #imgLight i#rightArrow {
-  font-size: 60px;
-  position: relative;
-  left: 950px;
-  top: -375px;
-  color: #901C1C;
-}
-#mainLight #imgLight p {
-  position: absolute;
-  top: 700px;
+#mainLight p {
+  width: 600px;
+  margin: 20px auto;
   color: #901C1C;
   font-family: "DM Sans";
   font-size: 3vh;
 }
+#mainLight #imgLight {
+  width: 800px;
+  display: flex;
+  align-items: center;
+}
+#mainLight #imgLight i#leftArrow {
+  width: 80px;
+  font-size: 60px;
+  left: 0px;
+  top: 325px;
+  color: #901C1C;
+}
+#mainLight #imgLight i#leftArrowWhite, #mainLight #imgLight i#rightArrowWhite {
+  width: 80px;
+  color: white;
+  font-size: 60px;
+}
+#mainLight #imgLight i#rightArrow {
+  text-align: right;
+  width: 80px;
+  font-size: 60px;
+  left: 950px;
+  top: -375px;
+  color: #901C1C;
+}
 #mainLight #imgLight img {
   object-fit: cover;
-  height: 700px;
-  width: 800px;
+  height: 600px;
+  width: 600px;
   margin: 0;
   margin-left: auto;
   margin-right: auto;
 }
 #mainLight #imgLight video {
-  height: 700px;
-  width: 800px;
+  height: 600px;
+  width: 600px;
   object-fit: cover;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 html {
@@ -534,7 +674,7 @@ main {
 article a {
   text-decoration: none;
 }
-article img {
+article .profilPicture {
   display: block;
   margin: 0% auto;
   width: 200px;
@@ -584,7 +724,7 @@ article .hashtag {
   line-height: 20px;
   background-color: #D3573C;
   position: fixed;
-  z-index: 9000;
+  z-index: 2;
   bottom: 0px;
   right: 20px;
   padding: 10px 30px;
@@ -599,6 +739,10 @@ article .hashtag {
   margin: 0 20px 0 0;
   line-height: 20px;
   font-size: 15px;
+}
+
+#contactMobile {
+  display: none;
 }
 
 /*# sourceMappingURL=style.css.map */

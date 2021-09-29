@@ -11,7 +11,7 @@
 </head>
  
 <body>
-    <header>
+    <header id="logoMargin">
         <a href="index.html" id="logo"><img id="logo_id" src="img/logo.png"  alt="Fisheye Home page"></a>
     </header>
     <main>
@@ -55,25 +55,23 @@
             </div>
         </div>
     </div>
-
+    <button id="contactMobile">Contactez-moi</button>
     <div id="frontBlock">
         <p id="ttLikes"></p>
         <i class="fas fa-heart"></i>
         <p id="price"></p>
     </div>
 
-    <div id="lightbox">
+    <div id="lightbox" tabindex="-1">
      
       <div id="mainLight"> 
         <i class="fas fa-times" id="cross" onclick="closeLightbox()" tabindex="0"></i>
-        <br>
-        <div id="imgLight"></div>
-
+        <div id="Light"></div>
       </div>
     </div>
 </main>
 
- <script src="photographers.js"></script>
+ <script src="photo.js"></script>
 </body>
 </html>
      

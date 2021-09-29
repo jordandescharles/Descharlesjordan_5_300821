@@ -21,10 +21,10 @@ header {
   justify-content: space-between;
   align-items: center;
 }
-#titlemini{
-  display:none;
+#titlemini {
+  display: none;
 }
-#titlemax{
+#titlemax {
   position: absolute;
   right: 0;
   top: -105px;
@@ -46,12 +46,11 @@ header {
   text-align: center;
   padding: 0 2vh;
   border-radius: 2vh;
-
 }
- #linkSkip{
-    color: black;
-    text-decoration: none;
-  }
+#linkSkip {
+  color: black;
+  text-decoration: none;
+}
 #linkSkip:focus #skipToContent {
   opacity: 1;
 }
@@ -70,13 +69,13 @@ header {
   flex-wrap: wrap;
   justify-content: center;
   padding: 0;
-  li{
+  li {
     margin: 3px 3px;
   }
 }
 li {
-  a{
-    color:$vermillon;
+  a {
+    color: $vermillon;
     text-decoration: none;
   }
 }
@@ -87,9 +86,8 @@ h1 {
   font-weight: 400;
   line-height: 47px;
   color: $vermillon;
- 
 }
-.carte{
+.carte {
   width: 400px;
   margin-bottom: 50px;
 }
@@ -100,16 +98,16 @@ h1 {
   flex-wrap: wrap;
   justify-content: center;
 }
-main{
-    padding-bottom:50px;
-    position: relative;
+main {
+  padding-bottom: 50px;
+  position: relative;
 }
 
 article {
   a {
     text-decoration: none;
   }
-  img {
+  .profilPicture{
     display: block;
     margin: 0% auto;
     width: 200px;
@@ -155,26 +153,28 @@ article {
   }
 }
 
-#frontBlock{
+#frontBlock {
   display: flex;
   line-height: 20px;
-  background-color: $saumon ;
-  position:fixed;
-  z-index: 9000;
-  bottom:0px;
-  right:20px;
+  background-color: $saumon;
+  position: fixed;
+  z-index: 2;
+  bottom: 0px;
+  right: 20px;
   padding: 10px 30px;
   font-size: 20px;
   border-top-left-radius: 5px;
   border-top-right-radius: 5px;
 
-  p{
-    margin : 0 5px 0 0;
+  p {
+    margin: 0 5px 0 0;
   }
-  i{
-    margin : 0 20px 0 0;
+  i {
+    margin: 0 20px 0 0;
     line-height: 20px;
     font-size: 15px;
   }
 }
-
+#contactMobile{
+  display:none;
+}
