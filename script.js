@@ -1,4 +1,4 @@
-let  allPhotographers = [];
+var allPhotographers = [];
 
 fetch('data.json')
     .then((response) => {
