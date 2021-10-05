@@ -6,14 +6,14 @@ const photographerName = url.searchParams.get("name");
 // CONST
 const modalbg = document.querySelector(".bground");
 // recuperation de la data
-var photographers = [];
-var media = [];
-var totalLikes = 0;
-var price = 0;
-var arrayPhotos = [];
-var indexPhoto = 0;
-var PhotographMedias = [];
-var keys=false;
+let photographers = [];
+let media = [];
+let totalLikes = 0;
+let price = 0;
+let arrayPhotos = [];
+let indexPhoto = 0;
+let PhotographMedias = [];
+let keys=false;
 
 fetch('data.json')
     .then((response) => {
@@ -179,21 +179,21 @@ function modal () {
 
 function selectList() {
     document.getElementById("selectFilter").innerHTML =  
-    `<li onclick="popFilter();closeListpop()" >Popularité <i class="fas fa-chevron-up" onclick="" ></i></li><hr>
-    <li onclick="dateFilter();closeListdate()" >Date</li><hr>
-    <li onclick="titleFilter();closeListtitle()">Titre</li>`
+    `<li role=”option” onclick="popFilter();closeListpop()" aria-labelledby="tri par popularité">Popularité <i class="fas fa-chevron-up" onclick="" ></i></li><hr>
+    <li role=”option”  onclick="dateFilter();closeListdate()" aria-labelledby="tri par date">Date</li><hr>
+    <li role=”option”  onclick="titleFilter();closeListtitle()" aria-labelledby="tri par titre">Titre</li>`
 }
 function closeListpop(){
     document.getElementById("selectFilter").innerHTML =  
-    `<li>Popularité <i class="fas fa-chevron-down" onclick="selectList()"></i></li>`
+    `<li role="button" haspopup=”listbox” aria-expanded="false" >Popularité <i class="fas fa-chevron-down" onclick="selectList()"></i></li>`
 }
 function closeListdate() {
     document.getElementById("selectFilter").innerHTML =  
-    `<li>Date <i class="fas fa-chevron-down" onclick="selectList()"></i></li>`
+    `<li role="button" haspopup=”listbox” aria-expanded="false">Date <i class="fas fa-chevron-down" onclick="selectList()"></i></li>`
 }
 function closeListtitle() {
     document.getElementById("selectFilter").innerHTML =  
-    `<li>Titre <i class="fas fa-chevron-down" onclick="selectList()"></i></li>`
+    `<li role="button" haspopup=”listbox” aria-expanded="false">Titre <i class="fas fa-chevron-down" onclick="selectList()"></i></li>`
 }
 // par titre
 function titleFilter(){
