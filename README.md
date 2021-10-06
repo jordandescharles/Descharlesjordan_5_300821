@@ -22,5 +22,5 @@ Ouvrir avec Live server
 soit :
 lancer le index.html sur votre localhost
 
-ou vous rendre à cette adresse :  <a href="sftp://u67837268@home403252265.1and1-data.host/FISHEYE/index.html" alt="adresse site fisheye">Fisheye</a>
+ou vous rendre à cette adresse :  <a href="http://jordandescharles.fr/FISHEYE/index.html" alt="adresse site fisheye">Fisheye</a>
 
