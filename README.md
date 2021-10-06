@@ -12,4 +12,15 @@ Web development project :
 -> Using Json Database<br />
 -> Dynamic filters and LightBox
 
+Pour tester le site je vous invite à télécharger les fichiers sources
+
+soit :
+Ouvrir le dossier avec VS code
+click droit sur index.html
+Ouvrir avec Live server
+
+soit :
+lancer le index.html sur votre localhost
+
+ou vous rendre à cette adresse :  <a href="sftp://u67837268@home403252265.1and1-data.host/FISHEYE/index.html" alt="adresse site fisheye">Fisheye</a>
 
