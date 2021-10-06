@@ -14,13 +14,15 @@ Web development project :
 
 Pour tester le site je vous invite à télécharger les fichiers sources
 
-soit :
-Ouvrir le dossier avec VS code
-click droit sur index.html
-Ouvrir avec Live server
+soit :<br />
+Ouvrir le dossier avec VS code<br />
+click droit sur index.html<br /><br />
+Ouvrir avec Live server<br /><br />
 
-soit :
-lancer le index.html sur votre localhost
-
-ou vous rendre à cette adresse :  <a href="http://jordandescharles.fr/FISHEYE/index.html" alt="adresse site fisheye">Fisheye</a>
+soit :<br />
+lancer le index.html sur votre localhost<br />
+<br />
+ou vous rendre à cette adresse :  <a href="http://jordandescharles.fr/FISHEYE/index.html" alt="adresse site fisheye">Fisheye</a>*
+<br /><br />
+* les photos ont été compréssées au max pour eviter de surcharger mon serveur elles sont donc des fois peu définies :)
 
