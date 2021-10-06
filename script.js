@@ -1,3 +1,7 @@
+const urlcourante = document.location.href;
+const url = new URL(urlcourante);
+const tagChoosen = url.searchParams.get("tag");
+
 var allPhotographers = [];
 
 fetch('data.json')
@@ -7,6 +11,8 @@ fetch('data.json')
     .then((data) => {
         allPhotographers = data.photographers;
         displayPhotographers(allPhotographers);
+        if(tagChoosen!= null){
+        filterPhotograph(tagChoosen)}
 });
 
 
@@ -33,7 +39,7 @@ function pageDesign(card){ // attention mettre les noms en anglais
     
     return `
 <article class="carte" id="${card.id}">
- <a href="${'photographer.html?id='+card.id+'&name='+card.name}"" alt="lien vers la page de ${card.name}">
+ <a href="${'photographer.html?id='+card.id+'&name='+card.name}" alt="lien vers la page de ${card.name}">
         <img class="profilPicture" src="img/Photographers_ID_Photos/${card.portrait}" alt=" profil de ${card.name}">
         <h2 class="name">${card.name}</h2>
     </a>

@@ -7,7 +7,7 @@
     <meta name="description" content="Fisheye . page de ...">
     <link rel="stylesheet" type="text/css" href="public/css/style.css">
     <script src="https://kit.fontawesome.com/cff89baa8e.js" crossorigin="anonymous"></script>
-    <link rel="shortcut icon" href="#">
+    <link rel="shortcut icon" href="index.html">
     <link rel="icon" type="image/png" sizes="16x16" href="favicon.ico">
 
    
@@ -22,10 +22,10 @@
        
     </div> 
     <div class="tri">
-      <p>
+      <p id="triPar">
         <strong>Trier par </strong> 
       </p>
-      <ul id="selectFilter" role="listbox"  tabindex="0"    >
+      <ul id="selectFilter" role="listbox"  tabindex="0" aria-labelledby="triPar"   >
           <li > Popularité <i id="chevron" class="fas fa-chevron-down" onfocus="triggerEnter('chevron')" onclick="selectList()" role="button" haspopup=”listbox” aria-expanded="false" tabindex="0" ></i></li>
         </ul>
       
@@ -38,27 +38,28 @@
     </div>  
 
     <div class="bground" >
-        <div class="content">
-          <span class="close" id="closeModal"></span>
+        <div class="content" aria-labelledby="contact">
+          <span class="close" id="closeModal"  aria-label="Close Contact form" ></span>
           <div class="modal-body">
-              <p>Contactez-moi  <br>
+            <h1 id="contact"> 
+              Contactez-moi  <br>
                 <span id="photographerName"></span>
-              </p>
+              </h1>
             <form id="myForm" name="reserve" action="index.html" method="get">
               <div class="formData" >
                 <label for="prenom">Prénom</label><br>
-                <input class="text-control" type="text" id="prenom" required minlength="2"/>
+                <input class="text-control" aria-labelledby="prenom" type="text" id="prenom" required minlength="2"/>
                 <br>
                 <label for="nom">Nom</label><br>
-                <input class="text-control" type="text" id="nom" required minlength="2"/>
+                <input class="text-control" type="text"  aria-labelledby="nom"  id="nom" required minlength="2"/>
                 <br>
                 <label for="e-mail">E-mail</label><br>
-                <input class="text-control" type="text" id="e-mail" required />
+                <input class="text-control" type="text" id="e-mail"  aria-labelledby="e-mail"  required />
                 <br>
                  <label for="message">Votre message</label><br>
-                <textarea class="text-area"  rows="5" cols="33" id="message"></textarea>
+                <textarea class="text-area"  rows="5" cols="33"  aria-labelledby="message"  id="message"></textarea>
               </div>
-              <button id="button"> Envoyer</button>
+              <button id="button" aria-label="send"> Envoyer</button>
             </form>
             </div>
         </div>
@@ -73,8 +74,8 @@
     <div id="lightbox" tabindex="-1">
      
       <div id="mainLight"> 
-        <i class="fas fa-times" id="cross" onclick="closeLightbox()" tabindex="0"></i>
-        <div id="Light"></div>
+        <i class="fas fa-times" id="cross" onclick="closeLightbox()" tabindex="0"  alt="close dialog" ></i>
+        <div id="Light" aria-label="image closeup view"></div>
       </div>
     </div>
 </main>

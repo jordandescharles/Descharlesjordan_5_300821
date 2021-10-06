@@ -62,7 +62,7 @@ const hashtags = (tags) => {
 }
 // met chaque tag dasn une Li
 const listeTag = (tag) => {
-    return `<li class="hashtag"><span>#</span>${tag}</li>`
+    return `<li class="hashtag"><a href="index.html?tag=${tag}" ><span>#</span>${tag}</li></a>`
 }
 
 // FACTORY -----------------------------------------------------------------------------------------------
@@ -178,21 +178,21 @@ function modal () {
 
 function selectList() {
     document.getElementById("selectFilter").innerHTML =   
-`   <li id="pop" role=”option” onfocus="triggerEnter('pop')" onclick="popFilter();closeListpop()" aria-labelledby="tri par popularité" role="listbox" haspopup=”listbox” aria-expanded="true" aria-activedescendant tabindex="0">Popularité <i class="fas fa-chevron-up" onclick="" ></i></li><hr>
-    <li id="date" role=”option” onfocus="triggerEnter('date')"  onclick="dateFilter();closeListdate()" aria-labelledby="tri par date"role="listbox" haspopup=”listbox” aria-expanded="true" aria-activedescendant tabindex="0">Date</li><hr>
-    <li id="title" role=”option” onfocus="triggerEnter('title')"  onclick="titleFilter();closeListtitle()" onblur="closeListpop()" aria-labelledby="tri par titre"role="listbox" haspopup=”listbox” aria-expanded="true" aria-activedescendant tabindex="0">Titre</li>`
+`   <li id="pop" role=”option” onfocus="triggerEnter('pop')" onclick="popFilter();closeListpop()" aria-labelledby="pop" role="listbox" haspopup="listbox" aria-expanded="true"  tabindex="0">Popularité <i class="fas fa-chevron-up" onclick="" ></i></li><hr>
+    <li id="date" role=”option” onfocus="triggerEnter('date')"  onclick="dateFilter();closeListdate()" aria-labelledby="date"role="listbox" haspopup="listbox" aria-expanded="true"  tabindex="0">Date</li><hr>
+    <li id="title" role=”option” onfocus="triggerEnter('title')"  onclick="titleFilter();closeListtitle()" onblur="closeListpop()" aria-labelledby="title"role="listbox" haspopup="listbox"  aria-expanded="true"  tabindex="0">Titre</li>`
 }
 function closeListpop(){
     document.getElementById("selectFilter").innerHTML =  
-    `<li>Popularité <i class="fas fa-chevron-down" onfocus="selectList()" role="button" haspopup=”listbox” aria-expanded="false" tabindex="0" ></i></li>`
+    `<li>Popularité <i class="fas fa-chevron-down" onfocus="selectList()" role="button" haspopup="listbox" aria-expanded="false" tabindex="0" ></i></li>`
 }
 function closeListdate() {
     document.getElementById("selectFilter").innerHTML =  
-    `<li>Date <i class="fas fa-chevron-down" onfocus="selectList()" role="button" haspopup=”listbox” aria-expanded="false" tabindex="0" ></i></li>`
+    `<li>Date <i class="fas fa-chevron-down" onfocus="selectList()" role="button" haspopup="listbox"” aria-expanded="false" tabindex="0" ></i></li>`
 }
 function closeListtitle() {
     document.getElementById("selectFilter").innerHTML =  
-    `<li>Titre <i class="fas fa-chevron-down" onfocus="selectList()" role="button" haspopup=”listbox” aria-expanded="false" tabindex="0" ></i></li>`
+    `<li>Titre <i class="fas fa-chevron-down" onfocus="selectList()" role="button" haspopup="listbox" aria-expanded="false" tabindex="0" ></i></li>`
 }
 // par titre
 function titleFilter(){
@@ -261,14 +261,14 @@ function fullsize(id, media, idPhoto, name, type) {
             <div id="imgLight">
                 <i class="fas fa-chevron-left" id="leftArrowWhite"></i> 
                 ${test()}
-                <i class="fas fa-chevron-right" id="rightArrow" onclick="rightArrow()"></i> 
+                <i class="fas fa-chevron-right" id="rightArrow" alt="next image" onclick="rightArrow()"></i> 
             </div>
             <p>${name}<p>`  }
 
         else if (indexPhoto == PhotographMedias.length - 1) {
             document.getElementById("Light").innerHTML = `
             <div id="imgLight">
-                <i class="fas fa-chevron-left" id="leftArrow" onclick="leftArrow()"></i> 
+                <i class="fas fa-chevron-left" id="leftArrow" alt="previous image" onclick="leftArrow()"></i> 
                 ${test()}
                 <i class="fas fa-chevron-left" id="rightArrowWhite"></i> 
             </div>
@@ -277,9 +277,9 @@ function fullsize(id, media, idPhoto, name, type) {
         else {
             document.getElementById("Light").innerHTML = `
             <div id="imgLight">
-                <i class="fas fa-chevron-left" id="leftArrow" onclick="leftArrow()"></i> 
+                <i class="fas fa-chevron-left" id="leftArrow" alt="previous image" onclick="leftArrow()"></i> 
                 ${test()}
-                <i class="fas fa-chevron-right" id="rightArrow" onclick="rightArrow()"></i> 
+                <i class="fas fa-chevron-right" id="rightArrow" alt="next image"  onclick="rightArrow()"></i> 
             </div>
             <p>${name}<p>`}
 

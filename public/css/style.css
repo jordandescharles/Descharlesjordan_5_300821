@@ -483,6 +483,11 @@ textarea {
   border: 0;
 }
 
+#contact {
+  color: black;
+  font-size: 5vh;
+}
+
 #lightbox {
   display: none;
   position: fixed;
