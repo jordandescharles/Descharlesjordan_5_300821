@@ -7,6 +7,9 @@
     <meta name="description" content="Fisheye . page de ...">
     <link rel="stylesheet" type="text/css" href="public/css/style.css">
     <script src="https://kit.fontawesome.com/cff89baa8e.js" crossorigin="anonymous"></script>
+    <link rel="shortcut icon" href="#">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon.ico">
+
    
 </head>
  
@@ -22,10 +25,15 @@
       <p>
         <strong>Trier par </strong> 
       </p>
-      <ul id="selectFilter" role="listbox" >
-          <li >Popularité <i class="fas fa-chevron-down" onclick="selectList()" role="button" haspopup=”listbox” aria-expanded="false" tabindex="0" ></i></li>
+      <ul id="selectFilter" role="listbox"  tabindex="0"    >
+          <li > Popularité <i id="chevron" class="fas fa-chevron-down" onfocus="triggerEnter('chevron')" onclick="selectList()" role="button" haspopup=”listbox” aria-expanded="false" tabindex="0" ></i></li>
         </ul>
-    </div>  
+      
+    </div> 
+
+   
+
+
     <div id="gallery">  
     </div>  
 

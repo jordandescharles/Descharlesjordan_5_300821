@@ -142,23 +142,23 @@ const galleryDesign = (card) => {
 // si c'est une IMAGE et Non likée
     if (card.type == 'jpg' && card.likedBefore == 'false') {
         return `<article class="imgGallery">
-                    <img class="galleryImg" src="img/${card.photographerId}/${card.media}" alt="${card.alt}" tabindex="0" onclick="fullsize(${card.photographerId},'${card.media}',${card.id},'${card.title}','${card.type}')"> 
+                    <img class="galleryImg" id="${card.photographerId}${card.id}" src="img/${card.photographerId}/${card.media}" alt="${card.alt}" tabindex="0" onfocus="triggerEnter('${card.photographerId}${card.id}')" onclick="fullsize(${card.photographerId},'${card.media}',${card.id},'${card.title}','${card.type}')"> 
                     <div> 
                         <h2 class="name">${card.title}</h2> 
                         <span id="${card.id}">${card.likes} 
-                            <i class="fas fa-heart"alt="${card.alt}" onclick="incrementLikes(${card.likes},${card.id})" tabindex="0"></i>
+                            <i id="cardImgLike" class="fas fa-heart"alt="like button" onfocus="triggerEnter('cardImgLike')" onclick="incrementLikes(${card.likes},${card.id})" tabindex="0"></i>
                         </span>
                     </div>
                  </article>`}
 // si c'est une VIDEO et Non likée
     else if (card.type == 'mp4' && card.likedBefore == 'false') {
         return `<article class="imgGallery" >
-                    <video title="${card.alt}" class="galleryImg" tabindex="0" onclick="fullsize(${card.photographerId},'${card.media}',${card.id},'${card.title}','${card.type}')">
+                    <video title="${card.alt}" class="galleryImg" id="${card.photographerId}${card.id}" tabindex="0" onfocus="triggerEnter('${card.photographerId}${card.id}')" onclick="fullsize(${card.photographerId},'${card.media}',${card.id},'${card.title}','${card.type}')">
                         <source src="img/${card.photographerId}/${card.media}" type="video/mp4" alt="${card.alt}"> 
                     </video>
                     <div> 
                         <h2 class="name">${card.title}</h2> 
-                         <span id="${card.id}">${card.likes} <i class="fas fa-heart" tabindex="0" onclick="incrementLikes(${card.likes},${card.id})"></i></span>
+                         <span id="${card.id}">${card.likes} <i id="cardVdoLike" class="fas fa-heart" tabindex="0" onfocus="triggerEnter('cardVdoLike')" onclick="incrementLikes(${card.likes},${card.id})"></i></span>
                     </div>
                 </article>`}
 }
@@ -176,24 +176,23 @@ function modal () {
 
 //TRIS -----------------------------------------------------------------------------------------------
 
-
 function selectList() {
-    document.getElementById("selectFilter").innerHTML =  
-    `<li role=”option” onclick="popFilter();closeListpop()" aria-labelledby="tri par popularité">Popularité <i class="fas fa-chevron-up" onclick="" ></i></li><hr>
-    <li role=”option”  onclick="dateFilter();closeListdate()" aria-labelledby="tri par date">Date</li><hr>
-    <li role=”option”  onclick="titleFilter();closeListtitle()" aria-labelledby="tri par titre">Titre</li>`
+    document.getElementById("selectFilter").innerHTML =   
+`   <li id="pop" role=”option” onfocus="triggerEnter('pop')" onclick="popFilter();closeListpop()" aria-labelledby="tri par popularité" role="listbox" haspopup=”listbox” aria-expanded="true" aria-activedescendant tabindex="0">Popularité <i class="fas fa-chevron-up" onclick="" ></i></li><hr>
+    <li id="date" role=”option” onfocus="triggerEnter('date')"  onclick="dateFilter();closeListdate()" aria-labelledby="tri par date"role="listbox" haspopup=”listbox” aria-expanded="true" aria-activedescendant tabindex="0">Date</li><hr>
+    <li id="title" role=”option” onfocus="triggerEnter('title')"  onclick="titleFilter();closeListtitle()" onblur="closeListpop()" aria-labelledby="tri par titre"role="listbox" haspopup=”listbox” aria-expanded="true" aria-activedescendant tabindex="0">Titre</li>`
 }
 function closeListpop(){
     document.getElementById("selectFilter").innerHTML =  
-    `<li role="button" haspopup=”listbox” aria-expanded="false" >Popularité <i class="fas fa-chevron-down" onclick="selectList()"></i></li>`
+    `<li>Popularité <i class="fas fa-chevron-down" onfocus="selectList()" role="button" haspopup=”listbox” aria-expanded="false" tabindex="0" ></i></li>`
 }
 function closeListdate() {
     document.getElementById("selectFilter").innerHTML =  
-    `<li role="button" haspopup=”listbox” aria-expanded="false">Date <i class="fas fa-chevron-down" onclick="selectList()"></i></li>`
+    `<li>Date <i class="fas fa-chevron-down" onfocus="selectList()" role="button" haspopup=”listbox” aria-expanded="false" tabindex="0" ></i></li>`
 }
 function closeListtitle() {
     document.getElementById("selectFilter").innerHTML =  
-    `<li role="button" haspopup=”listbox” aria-expanded="false">Titre <i class="fas fa-chevron-down" onclick="selectList()"></i></li>`
+    `<li>Titre <i class="fas fa-chevron-down" onfocus="selectList()" role="button" haspopup=”listbox” aria-expanded="false" tabindex="0" ></i></li>`
 }
 // par titre
 function titleFilter(){
@@ -313,3 +312,16 @@ function keyTriggers(){
         }
 }
 
+/* 
+FOCUS TRIGGERS
+permet d'utiliser enter au lieu du click
+*/ 
+function triggerEnter(id){
+    document.getElementById(id)
+        .addEventListener("keyup",(e) =>{
+        e.preventDefault();
+        if (e.key === "Enter") {
+            document.getElementById(id).click();
+        }
+    });
+    }

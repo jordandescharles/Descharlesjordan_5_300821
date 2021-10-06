@@ -6,9 +6,8 @@
     <title>Fisheye</title>
     <meta name="description" content="Fisheye . Site web de photographes freelances">
     <link rel="stylesheet" type="text/css" href="public/css/style.css">
-   
-   
-
+    <link rel="shortcut icon" href="#">
+    <link rel="icon" type="image/png" sizes="16x16" href="./favicon.ico">
 </head>
  
 <body>
@@ -19,14 +18,14 @@
         
         <nav aria-label="photographer categories">
             <ul class="listeTag">
-                <li class="hashtag" tabindex="0" onclick="filterPhotograph('portrait')"><a><span>#</span>Portrait</a></li>
-                <li class="hashtag" tabindex="0" onclick="filterPhotograph('art')"><a><span>#</span>Art</a></li>
-                <li class="hashtag" tabindex="0" onclick="filterPhotograph('fashion')"><a><span>#</span>Fashion</a></li>
-                <li class="hashtag" tabindex="0" onclick="filterPhotograph('architecture')"><a><span>#</span>Architecture</a></li>
-                <li class="hashtag" tabindex="0" onclick="filterPhotograph('travel')"><a><span>#</span>Travel</a></li>
-                <li class="hashtag" tabindex="0" onclick="filterPhotograph('sport')"><a><span>#</span>Sport</a></li>
-                <li class="hashtag" tabindex="0" onclick="filterPhotograph('animals')"><a><span>#</span>Animals</a></li>
-                <li class="hashtag" tabindex="0" onclick="filterPhotograph('events')"><a><span>#</span>Events</a></li>
+                <li id="por" class="hashtag" onfocus="triggerEnter('por')" tabindex="0" onclick="filterPhotograph('portrait')"><a><span>#</span>Portrait</a></li>
+                <li id="art" class="hashtag" onfocus="triggerEnter('art')" tabindex="0" onclick="filterPhotograph('art')"><a><span>#</span>Art</a></li>
+                <li id="fas" class="hashtag" onfocus="triggerEnter('fas')" tabindex="0" onclick="filterPhotograph('fashion')"><a><span>#</span>Fashion</a></li>
+                <li id="arc" class="hashtag" onfocus="triggerEnter('arc')" tabindex="0" onclick="filterPhotograph('architecture')"><a><span>#</span>Architecture</a></li>
+                <li id="tra" class="hashtag" onfocus="triggerEnter('tra')" tabindex="0" onclick="filterPhotograph('travel')"><a><span>#</span>Travel</a></li>
+                <li id="spo" class="hashtag" onfocus="triggerEnter('spo')" tabindex="0" onclick="filterPhotograph('sport')"><a><span>#</span>Sport</a></li>
+                <li id="ani" class="hashtag" onfocus="triggerEnter('ani')" tabindex="0" onclick="filterPhotograph('animals')"><a><span>#</span>Animals</a></li>
+                <li id="eve" class="hashtag" onfocus="triggerEnter('eve')" tabindex="0" onclick="filterPhotograph('events')"><a><span>#</span>Events</a></li>
             </ul>
         </nav>      
         

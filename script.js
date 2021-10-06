@@ -52,3 +52,18 @@ function hashtags(tag){
 function listeTag(tag){
     return ` <li class="hashtag"><span>#</span>${tag}</li>`
 }
+
+
+/* 
+FOCUS TRIGGERS
+permet d'utiliser enter au lieu du click
+*/ 
+function triggerEnter(id){
+    document.getElementById(id)
+        .addEventListener("keyup",(e) =>{
+        e.preventDefault();
+        if (e.key === "Enter") {
+            document.getElementById(id).click();
+        }
+    });
+    }
