@@ -26,13 +26,10 @@
         <strong>Trier par </strong> 
       </p>
       <ul id="selectFilter" role="listbox"  tabindex="0" aria-labelledby="triPar"   >
-          <li > Popularité <i id="chevron" class="fas fa-chevron-down" onfocus="triggerEnter('chevron')" onclick="selectList()" role="button" haspopup=”listbox” aria-expanded="false" tabindex="0" ></i></li>
+          <li > Popularité <i id="chevron" class="fas fa-chevron-down" onfocus="triggerEnter('chevron')" onclick="selectList()" role="button"  aria-expanded="false" tabindex="0" ></i></li>
         </ul>
       
     </div> 
-
-   
-
 
     <div id="gallery">  
     </div>  
@@ -74,7 +71,7 @@
     <div id="lightbox" tabindex="-1">
      
       <div id="mainLight"> 
-        <i class="fas fa-times" id="cross" onclick="closeLightbox()" tabindex="0"  alt="close dialog" ></i>
+        <i class="fas fa-times" id="cross" onclick="closeLightbox()" tabindex="0"  aria-label="close dialog" ></i>
         <div id="Light" aria-label="image closeup view"></div>
       </div>
     </div>
