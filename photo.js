@@ -325,3 +325,17 @@ function triggerEnter(id){
         }
     });
     }
+
+    function testConsole(){
+        var prenom = document.getElementById("prenom").value;
+        var nom = document.getElementById("nom").value;
+        var email = document.getElementById("e-mail").value;
+        var message = document.getElementById("message").value;
+        console.log("prenom = "+ prenom);
+        console.log("nom = "+ nom);
+        console.log("email = "+ email);
+        console.log("message = "+ message);
+
+    }
+
+    

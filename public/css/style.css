@@ -569,6 +569,8 @@ textarea {
 
 html {
   font-family: "DM Sans";
+  margin-left: 5px;
+  margin-right: 5px;
 }
 
 body {
