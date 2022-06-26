@@ -21,8 +21,3 @@ Ouvrir avec Live server<br /><br />
 
 soit :<br />
 lancer le index.html sur votre localhost<br />
-<br />
-ou vous rendre à cette adresse :  <a href="http://jordandescharles.fr/FISHEYE/index.html" alt="adresse site fisheye">Fisheye</a>*
-<br /><br />
-* les photos ont été compréssées au max pour eviter de surcharger mon serveur elles sont donc des fois peu définies :)
-
